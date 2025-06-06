@@ -9,7 +9,9 @@
       "Bash(pkill:*)",
       "Bash(rm:*)",
       "Bash(ls:*)",
-      "Bash(true)"
+      "Bash(true)",
+      "Bash(npm install:*)",
+      "Bash(cp:*)"
     ],
     "deny": []
   }
