@@ -31,6 +31,7 @@ interface GridItem {
   subtitle?: string;
   category?: string;
   videoUrl?: string;
+  externalLink?: string;
   size?: 'small' | 'medium' | 'large' | 'xlarge';
 }
 
@@ -46,6 +47,7 @@ export default function SeenOnGridPage() {
   const heroVideoRef = useRef<HTMLVideoElement>(null);
   const heroTitleRef = useRef<HTMLHeadingElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const gridSectionRef = useRef<HTMLDivElement>(null);
 
   // Parallax scroll effects
   const { scrollYProgress } = useScroll({
@@ -60,9 +62,9 @@ export default function SeenOnGridPage() {
   // All available items (in a real app, this would come from an API)
   const allItems: GridItem[] = [
     { id: '1', type: 'image', src: mishkaLookbook, title: 'KME WORLD × MISHKA', subtitle: '2023 LOOKBOOK', category: 'Collection', size: 'xlarge' },
-    { id: '2', type: 'image', src: shakeImage, title: '070 SHAKE', subtitle: 'CRACK MAGAZINE', category: 'Editorial', size: 'large' },
+    { id: '2', type: 'image', src: shakeImage, title: '070 SHAKE', subtitle: 'CRACK MAGAZINE', category: 'Editorial', size: 'large', externalLink: 'https://crackmagazine.net/article/profiles/070-shake-feature/' },
     { id: '3', type: 'image', src: kmeDesign1, title: 'MISHKA COLLAB', subtitle: 'Custom Hoodie', category: 'Product', size: 'medium' },
-    { id: '4', type: 'image', src: ddgImage, title: 'DDG', subtitle: 'UPROXX MAGAZINE', category: 'Editorial', size: 'large' },
+    { id: '4', type: 'image', src: ddgImage, title: 'DDG', subtitle: 'UPROXX MAGAZINE', category: 'Editorial', size: 'large', externalLink: 'https://uproxx.com/music/ddg-its-not-me-its-you-interview/' },
     { id: '5', type: 'image', src: kmeDesign2, title: 'EYEBALL GRAPHIC', subtitle: 'Signature Series', category: 'Product', size: 'medium' },
     { id: '6', type: 'video', src: lanceyImage, title: 'LANCEY FOUX', subtitle: 'FT. TEEZO TOUCHDOWN', category: 'Music Video', videoUrl: 'https://www.youtube.com/watch?v=UXWGAydyOww', size: 'large' },
     { id: '7', type: 'image', src: ddgFeature, title: 'DDG', subtitle: 'Custom Piece', category: 'Celebrity', size: 'small' },
@@ -188,6 +190,8 @@ export default function SeenOnGridPage() {
   const handleItemClick = (item: GridItem) => {
     if (item.type === 'video' && item.videoUrl) {
       window.open(item.videoUrl, '_blank');
+    } else if (item.externalLink) {
+      window.open(item.externalLink, '_blank');
     } else {
       setSelectedItem(item);
     }
@@ -209,6 +213,11 @@ export default function SeenOnGridPage() {
     }
     
     return `${baseClass} col-span-1 row-span-1`;
+  };
+
+  // Function to scroll to the collection grid
+  const handleExploreCollectionClick = () => {
+    gridSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -307,6 +316,7 @@ export default function SeenOnGridPage() {
             }}
             whileTap={{ scale: 0.95 }}
             className="mt-8 px-8 py-4 border border-white/50 text-white font-space text-sm uppercase tracking-[0.2em] backdrop-blur-sm bg-white/5 hover:bg-white hover:text-black transition-all duration-500 group"
+            onClick={handleExploreCollectionClick}
           >
             <span className="relative z-10">Explore Collection</span>
             <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
@@ -357,7 +367,7 @@ export default function SeenOnGridPage() {
       </div>
 
       {/* Stunning Grid Section */}
-      <div className="max-w-[1600px] mx-auto px-4 md:px-6 py-20 grid-container">
+      <div ref={gridSectionRef} className="max-w-[1600px] mx-auto px-4 md:px-6 py-20 grid-container">
         <motion.div 
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[280px]"
           initial="hidden"
