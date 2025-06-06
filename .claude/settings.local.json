@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev:*)",
+      "Bash(curl:*)",
+      "Bash(lsof:*)",
+      "Bash(cat:*)",
+      "Bash(sudo lsof:*)",
+      "Bash(pkill:*)",
+      "Bash(rm:*)",
+      "Bash(ls:*)",
+      "Bash(true)"
+    ],
+    "deny": []
+  }
+}
