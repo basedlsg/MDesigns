@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import heroImage from "@assets/IMG_0646.jpg";
+import kmeWorldLogo from "@assets/Screen Shot 2024-02-05 at 11.35.29 AM.png";
 
 export default function Hero() {
   const [parallaxOffset, setParallaxOffset] = useState(0);
@@ -30,49 +30,48 @@ export default function Hero() {
 
   return (
     <section 
-      className="relative h-screen overflow-hidden"
+      className="relative h-screen overflow-hidden bg-black"
       style={{ transform: `translateY(${parallaxOffset}px)` }}
     >
-      {/* Hero background featuring 070 Shake portrait */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 hero-overlay z-10"></div>
-        <div 
-          className="w-full h-full bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        ></div>
-      </div>
+      {/* Minimalist black background with subtle texture */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
       
       {/* Hero Content */}
       <div className="relative z-20 h-full flex items-center justify-center">
         <div className="text-center max-w-4xl px-6">
-          <h1 className="font-bebas text-6xl md:text-8xl lg:text-9xl leading-none mb-6">
-            <span className="block text-white">GARMENTS</span>
-            <span className="block text-stroke animate-pulse-slow">FOR THE</span>
-            <span className="block text-electric">UNORTHODOX</span>
-          </h1>
-          <p className="text-xl md:text-2xl font-space text-gray-300 mb-8 max-w-2xl mx-auto">
-            LA-based fashion designer creating bold streetwear for celebrities and cultural icons
+          {/* KME World Logo */}
+          <div className="mb-12">
+            <img 
+              src={kmeWorldLogo} 
+              alt="KME World - Garments for the Unorthodox"
+              className="mx-auto w-full max-w-2xl h-auto"
+            />
+          </div>
+          
+          <p className="text-xl md:text-2xl font-space text-gray-300 mb-8 max-w-2xl mx-auto uppercase tracking-widest">
+            Los Angeles Fashion Designer
           </p>
+          
           <div className="flex justify-center gap-6">
             <button 
               onClick={scrollToPortfolio}
-              className="bg-electric text-black px-8 py-3 font-bebas text-lg tracking-wider hover:bg-white transition-colors"
+              className="bg-white text-black px-8 py-3 font-bebas text-lg tracking-wider hover:bg-gray-200 transition-colors uppercase"
             >
-              VIEW PORTFOLIO
+              View Collection
             </button>
             <button 
               onClick={scrollToSeenOn}
-              className="border border-white text-white px-8 py-3 font-bebas text-lg tracking-wider hover:bg-white hover:text-black transition-colors"
+              className="border border-white text-white px-8 py-3 font-bebas text-lg tracking-wider hover:bg-white hover:text-black transition-colors uppercase"
             >
-              SEEN ON
+              Collaborations
             </button>
           </div>
         </div>
       </div>
       
-      {/* Floating Elements */}
-      <div className="absolute top-20 right-20 w-4 h-4 bg-electric rounded-full animate-float hidden lg:block"></div>
-      <div className="absolute bottom-40 left-10 w-6 h-6 bg-warm-orange rounded-full animate-float hidden lg:block" style={{ animationDelay: '-2s' }}></div>
+      {/* Subtle floating elements */}
+      <div className="absolute top-20 right-20 w-2 h-2 bg-white/20 rounded-full animate-float hidden lg:block"></div>
+      <div className="absolute bottom-40 left-10 w-3 h-3 bg-white/10 rounded-full animate-float hidden lg:block" style={{ animationDelay: '-2s' }}></div>
     </section>
   );
 }

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import kmeWorldLogo from "@assets/KME WORLD - Logo (twolines) - white box.png";
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -20,40 +21,42 @@ export default function Navigation() {
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-colors duration-300 border-b border-gray-800 ${
+    <nav className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
       scrolled ? 'bg-black' : 'bg-black/90 backdrop-blur-md'
     }`}>
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <div className="text-2xl font-bebas tracking-wider">
-            <span className="text-white">MINZLY</span>
-            <span className="text-electric">×</span>
-            <span className="text-warm-orange">KME WORLD</span>
+          <div className="w-32 h-auto">
+            <img 
+              src={kmeWorldLogo}
+              alt="KME World"
+              className="w-full h-auto"
+            />
           </div>
           <div className="hidden md:flex space-x-8 font-space text-sm">
             <button 
               onClick={() => scrollToSection('portfolio')}
-              className="hover:text-electric transition-colors"
+              className="text-white hover:text-gray-300 transition-colors uppercase tracking-widest"
             >
-              PORTFOLIO
+              Collection
             </button>
             <button 
               onClick={() => scrollToSection('seen-on')}
-              className="hover:text-electric transition-colors"
+              className="text-white hover:text-gray-300 transition-colors uppercase tracking-widest"
             >
-              SEEN ON
+              Collaborations
             </button>
             <button 
               onClick={() => scrollToSection('about')}
-              className="hover:text-electric transition-colors"
+              className="text-white hover:text-gray-300 transition-colors uppercase tracking-widest"
             >
-              ABOUT
+              About
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="hover:text-electric transition-colors"
+              className="text-white hover:text-gray-300 transition-colors uppercase tracking-widest"
             >
-              CONTACT
+              Contact
             </button>
           </div>
         </div>

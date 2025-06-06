@@ -1,7 +1,10 @@
 import { useEffect, useRef } from "react";
-import lanceyImage from "@assets/LANCEY FOUX FT. TEEZO TOUCHDOWN.png";
-import teezoConcertImage from "@assets/teezo-touchdown-returns-as-special-guest-for-doja-cat-for-v0-1gobnfgm4zvc1.webp";
-import cardiBImage from "@assets/gettyimages-2151690758-1024x1024.webp";
+import shakeImage from "@assets/070 SHAKE X CRASH MAGAZINE.png";
+import ddgImage from "@assets/DDG X UPROXX MAGAZINE.png";
+import groupPhoto from "@assets/Screen Shot 2024-01-09 at 9.25.21 PM.png";
+import ddgFeature from "@assets/IMG_0648.jpg";
+import cardiBGrammy from "@assets/IMG_0647.jpg";
+import performanceShot from "@assets/IMG_0649 (1).jpg";
 
 interface VideoLink {
   title: string;
@@ -16,8 +19,7 @@ const videoLinks: VideoLink[] = [
     title: "LANCEY FOUX × TEEZO TOUCHDOWN",
     artist: "Lancey Foux ft. Teezo Touchdown",
     description: "Custom looks for music video collaboration",
-    url: "https://www.youtube.com/watch?v=UXWGAydyOww",
-    thumbnail: lanceyImage
+    url: "https://www.youtube.com/watch?v=UXWGAydyOww"
   },
   {
     title: "JUICY J × MARSHMELLO",
@@ -89,95 +91,125 @@ export default function SeenOn() {
   };
 
   return (
-    <section id="seen-on" ref={sectionRef} className="py-20 bg-black">
+    <section id="seen-on" ref={sectionRef} className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 animate-on-scroll">
-          <h2 className="font-bebas text-5xl md:text-7xl text-white mb-4">SEEN ON</h2>
-          <p className="text-gray-400 font-space text-lg">Celebrities and artists wearing KME World designs</p>
+          <h2 className="font-bebas text-5xl md:text-7xl text-white mb-4 uppercase tracking-wider">Collaborations</h2>
+          <div className="w-16 h-px bg-white mx-auto mb-8"></div>
+          <p className="text-gray-400 font-space text-lg uppercase tracking-widest">Artists & Magazine Features</p>
         </div>
 
-        {/* Video Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 animate-on-scroll">
-          {videoLinks.map((video, index) => (
-            <div 
-              key={index}
-              className="group relative overflow-hidden rounded-lg bg-gray-900 cursor-pointer"
-              onClick={() => openVideo(video.url)}
-            >
-              {video.thumbnail ? (
-                <div 
-                  className="aspect-video bg-cover bg-center"
-                  style={{ backgroundImage: `url(${video.thumbnail})` }}
-                >
-                  <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
-                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
-                      <i className="fas fa-play text-white text-xl ml-1"></i>
-                    </div>
+        {/* Magazine Features */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20 animate-on-scroll">
+          <div className="group">
+            <div className="relative overflow-hidden aspect-[4/3] mb-4">
+              <img 
+                src={shakeImage}
+                alt="070 Shake x Crack Magazine"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+            </div>
+            <div className="space-y-2">
+              <p className="text-gray-500 font-space text-xs uppercase tracking-widest">Magazine Feature</p>
+              <h3 className="font-bebas text-2xl text-white uppercase">070 SHAKE × CRACK MAGAZINE</h3>
+              <p className="text-gray-400 font-space">Editorial styling and custom pieces</p>
+            </div>
+          </div>
+
+          <div className="group">
+            <div className="relative overflow-hidden aspect-[4/3] mb-4">
+              <img 
+                src={ddgImage}
+                alt="DDG x UPROXX Magazine"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+            </div>
+            <div className="space-y-2">
+              <p className="text-gray-500 font-space text-xs uppercase tracking-widest">Magazine Cover</p>
+              <h3 className="font-bebas text-2xl text-white uppercase">DDG × UPROXX MAGAZINE</h3>
+              <p className="text-gray-400 font-space">Cover story styling and wardrobe</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Celebrity Moments */}
+        <div className="mb-20 animate-on-scroll">
+          <h3 className="font-bebas text-3xl md:text-4xl text-white mb-8 text-center uppercase">Celebrity Moments</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="group">
+              <div className="relative overflow-hidden aspect-square mb-4">
+                <img 
+                  src={ddgFeature}
+                  alt="DDG wearing KME World custom piece"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+              </div>
+              <p className="text-white font-bebas text-lg uppercase text-center">DDG</p>
+            </div>
+
+            <div className="group">
+              <div className="relative overflow-hidden aspect-square mb-4">
+                <img 
+                  src={cardiBGrammy}
+                  alt="Grammy House event styling"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+              </div>
+              <p className="text-white font-bebas text-lg uppercase text-center">Grammy House</p>
+            </div>
+
+            <div className="group">
+              <div className="relative overflow-hidden aspect-square mb-4">
+                <img 
+                  src={performanceShot}
+                  alt="Performance styling moment"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+              </div>
+              <p className="text-white font-bebas text-lg uppercase text-center">Live Performance</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Video Links */}
+        <div className="mb-16 animate-on-scroll">
+          <h3 className="font-bebas text-3xl md:text-4xl text-white mb-8 text-center uppercase">Video Collaborations</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {videoLinks.map((video, index) => (
+              <div 
+                key={index}
+                className="group bg-gray-800 p-6 cursor-pointer hover:bg-gray-700 transition-colors duration-300"
+                onClick={() => openVideo(video.url)}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                    <i className="fas fa-play text-white text-lg"></i>
                   </div>
+                  <i className="fas fa-external-link-alt text-gray-400 group-hover:text-white transition-colors"></i>
                 </div>
-              ) : (
-                <div className="aspect-video bg-gray-800 flex items-center justify-center">
-                  <div className="text-center">
-                    <i className="fas fa-music text-4xl text-gray-600 mb-4"></i>
-                    <p className="text-gray-500 font-space">Video Content</p>
-                  </div>
-                </div>
-              )}
-              <div className="p-4">
-                <h3 className="font-bebas text-xl text-white mb-2">{video.title}</h3>
+                <h4 className="font-bebas text-lg text-white mb-2 uppercase">{video.title}</h4>
                 <p className="text-gray-400 font-space text-sm">{video.description}</p>
-                <div className="inline-block mt-3 text-electric hover:text-white transition-colors font-space text-sm">
-                  WATCH VIDEO <i className="fas fa-external-link-alt ml-1"></i>
-                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
-        {/* Celebrity Showcase */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-on-scroll">
-          <div className="relative group overflow-hidden rounded-lg aspect-square bg-gray-900">
-            <div 
-              className="w-full h-full bg-cover bg-center"
-              style={{ backgroundImage: `url(${teezoConcertImage})` }}
-            >
-              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-300"></div>
-              <div className="absolute bottom-2 left-2 right-2">
-                <p className="text-white font-bebas text-sm">TEEZO TOUCHDOWN</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="relative group overflow-hidden rounded-lg aspect-square bg-gray-900">
-            <div 
-              className="w-full h-full bg-cover bg-center"
-              style={{ backgroundImage: `url(${cardiBImage})` }}
-            >
-              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-300"></div>
-              <div className="absolute bottom-2 left-2 right-2">
-                <p className="text-white font-bebas text-sm">BAD GIRLS</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="relative group overflow-hidden rounded-lg aspect-square bg-gray-900">
-            <div 
-              className="w-full h-full bg-cover bg-center"
-              style={{ backgroundImage: `url(${lanceyImage})` }}
-            >
-              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-300"></div>
-              <div className="absolute bottom-2 left-2 right-2">
-                <p className="text-white font-bebas text-sm">LANCEY FOUX</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="relative group overflow-hidden rounded-lg aspect-square bg-gray-900">
-            <div className="w-full h-full bg-gray-800 flex items-center justify-center">
-              <i className="fas fa-plus text-3xl text-gray-600"></i>
-            </div>
-            <div className="absolute bottom-2 left-2 right-2">
-              <p className="text-white font-bebas text-sm">MORE</p>
+        {/* Group Photo */}
+        <div className="animate-on-scroll">
+          <div className="relative max-w-4xl mx-auto">
+            <img 
+              src={groupPhoto}
+              alt="KME World community and collaborators"
+              className="w-full h-auto"
+            />
+            <div className="absolute bottom-8 left-8 right-8 bg-black/80 p-6">
+              <h3 className="font-bebas text-2xl md:text-3xl text-white mb-2 uppercase">The Community</h3>
+              <p className="text-gray-300 font-space">Artists, creatives, and collaborators wearing KME World</p>
             </div>
           </div>
         </div>

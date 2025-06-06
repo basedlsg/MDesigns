@@ -1,4 +1,6 @@
 import { useEffect, useRef } from "react";
+import ringLogo from "@assets/ring logo.png";
+import mishkaLogo from "@assets/Screen Shot 2023-04-23 at 10.24.50 PM.png";
 
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -34,54 +36,94 @@ export default function About() {
   }, []);
 
   const services = [
+    "Custom Streetwear Design",
     "Celebrity Styling & Wardrobe",
     "Music Video & Performance Looks", 
     "Editorial & Magazine Features",
-    "Custom Streetwear Design"
+    "Brand Collaborations"
   ];
 
   return (
-    <section id="about" ref={sectionRef} className="py-20 bg-gradient-to-b from-gray-900 to-black">
+    <section id="about" ref={sectionRef} className="py-20 bg-black">
       <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-16 animate-on-scroll">
+          <h2 className="font-bebas text-5xl md:text-7xl text-white mb-4 uppercase tracking-wider">About</h2>
+          <div className="w-16 h-px bg-white mx-auto mb-8"></div>
+          <p className="text-gray-400 font-space text-lg uppercase tracking-widest">KME World Designer</p>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8 animate-on-scroll">
             <div>
-              <h2 className="font-bebas text-5xl md:text-6xl text-white mb-6">ABOUT MINZLY</h2>
-              <div className="w-16 h-1 bg-electric mb-8"></div>
+              <h3 className="font-bebas text-3xl md:text-4xl text-white mb-6 uppercase">Minzly</h3>
               <p className="text-gray-300 font-space text-lg leading-relaxed mb-6">
                 Based in Los Angeles, Minzly is the creative force behind KME World, designing 
-                bold streetwear pieces for the music industry's most innovative artists.
+                bold streetwear pieces that blur the lines between underground culture and high fashion.
               </p>
               <p className="text-gray-400 font-space leading-relaxed mb-8">
-                From magazine covers to music videos, performance styling to red carpet moments, 
-                our designs push boundaries and redefine contemporary fashion for the unorthodox.
+                Known for unconventional silhouettes, statement graphics, and fearless color combinations, 
+                KME World has become a go-to brand for artists who refuse to blend in. The 2023 collaboration 
+                with MISHKA marked a pivotal moment, cementing the brand's place in streetwear culture.
               </p>
             </div>
             
             <div className="space-y-4">
+              <h4 className="font-bebas text-xl text-white mb-4 uppercase tracking-wider">Services</h4>
               {services.map((service, index) => (
                 <div key={index} className="flex items-center space-x-4">
-                  <div className="w-2 h-2 bg-electric rounded-full"></div>
-                  <span className="text-white font-space">{service}</span>
+                  <div className="w-1 h-1 bg-white rounded-full"></div>
+                  <span className="text-gray-300 font-space">{service}</span>
                 </div>
               ))}
             </div>
           </div>
           
           <div className="relative animate-on-scroll">
-            <div className="aspect-[4/5] bg-gray-800 rounded-lg relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-electric/20 to-warm-orange/20"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <i className="fas fa-tshirt text-6xl text-gray-600 mb-4"></i>
-                  <p className="text-gray-500 font-space">Studio Portrait</p>
+            <div className="grid grid-cols-2 gap-6">
+              <div className="space-y-6">
+                <div className="aspect-square bg-black p-8 flex items-center justify-center">
+                  <img 
+                    src={ringLogo}
+                    alt="KME World Ring Logo"
+                    className="w-full h-auto"
+                  />
+                </div>
+                <div className="aspect-[4/3] bg-gray-900 p-6 flex items-center justify-center">
+                  <div className="text-center">
+                    <p className="text-white font-bebas text-lg uppercase tracking-wider">Est. 2020</p>
+                    <p className="text-gray-400 font-space text-sm mt-2">Los Angeles</p>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <div className="aspect-[4/3] bg-gray-900 p-6 flex items-center justify-center">
+                  <div className="text-center">
+                    <p className="text-white font-bebas text-lg uppercase tracking-wider">Underground</p>
+                    <p className="text-gray-400 font-space text-sm mt-2">Culture</p>
+                  </div>
+                </div>
+                <div className="aspect-square bg-black p-8 flex items-center justify-center">
+                  <img 
+                    src={mishkaLogo}
+                    alt="KME World x MISHKA Collaboration Logos"
+                    className="w-full h-auto"
+                  />
                 </div>
               </div>
             </div>
-            
-            {/* Floating design elements */}
-            <div className="absolute -top-6 -right-6 w-12 h-12 bg-electric rounded-full opacity-80 animate-float"></div>
-            <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-warm-orange rounded-full opacity-60 animate-float" style={{ animationDelay: '-1s' }}></div>
+          </div>
+        </div>
+
+        {/* Philosophy */}
+        <div className="mt-20 text-center animate-on-scroll">
+          <div className="max-w-3xl mx-auto">
+            <h3 className="font-bebas text-3xl md:text-4xl text-white mb-6 uppercase">Philosophy</h3>
+            <p className="text-gray-400 font-space text-lg leading-relaxed">
+              "Fashion should be a form of rebellion. Every piece we create is for those who dare to 
+              stand out, who refuse to conform, and who understand that true style comes from within. 
+              KME World is for the unorthodox."
+            </p>
+            <p className="text-gray-500 font-space text-sm mt-6 uppercase tracking-widest">— Minzly, Creative Director</p>
           </div>
         </div>
       </div>

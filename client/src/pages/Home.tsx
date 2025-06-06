@@ -16,24 +16,17 @@ export default function Home() {
       <Contact />
       
       {/* Footer */}
-      <footer className="bg-black border-t border-gray-800 py-8">
+      <footer className="bg-black py-12">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <div className="text-2xl font-bebas tracking-wider">
-                <span className="text-white">MINZLY</span>
-                <span className="text-electric">×</span>
-                <span className="text-warm-orange">KME WORLD</span>
-              </div>
-              <p className="text-gray-500 font-space text-sm mt-2">GARMENTS FOR THE UNORTHODOX</p>
+          <div className="text-center">
+            <div className="mb-8">
+              <p className="text-white font-bebas text-2xl md:text-3xl uppercase tracking-wider mb-2">KME WORLD</p>
+              <p className="text-gray-400 font-space text-sm uppercase tracking-widest">Garments for the Unorthodox</p>
             </div>
             
-            <div className="flex space-x-6">
+            <div className="flex justify-center space-x-8 mb-8">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 <i className="fab fa-instagram text-xl"></i>
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <i className="fab fa-twitter text-xl"></i>
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 <i className="fab fa-youtube text-xl"></i>
@@ -42,12 +35,15 @@ export default function Home() {
                 <i className="fab fa-tiktok text-xl"></i>
               </a>
             </div>
-          </div>
-          
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-            <p className="text-gray-500 font-space text-sm">
-              © 2024 KME WORLD. All rights reserved. | WWW.KMEWORLD.COM
-            </p>
+            
+            <div className="border-t border-gray-800 pt-8">
+              <p className="text-gray-500 font-space text-sm">
+                © 2024 KME WORLD. All rights reserved.
+              </p>
+              <p className="text-gray-600 font-space text-xs mt-2 uppercase tracking-widest">
+                Los Angeles, California | minzly@kmeworld.com
+              </p>
+            </div>
           </div>
         </div>
       </footer>

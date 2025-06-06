@@ -60,47 +60,70 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" ref={sectionRef} className="py-20 bg-black">
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <div className="animate-on-scroll">
-          <h2 className="font-bebas text-5xl md:text-7xl text-white mb-8">GET IN TOUCH</h2>
-          <p className="text-gray-400 font-space text-lg mb-12 max-w-2xl mx-auto">
-            Ready to create something unorthodox? Let's collaborate on your next project.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 animate-on-scroll">
-          {contactMethods.map((method, index) => (
-            <div key={index} className="text-center">
-              <div className="w-16 h-16 bg-electric/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className={`${method.icon} text-electric text-xl`}></i>
-              </div>
-              <h3 className="font-bebas text-xl text-white mb-2">{method.title}</h3>
-              <p className="text-gray-400 font-space">{method.info}</p>
-            </div>
-          ))}
-        </div>
-        
-        <div className="flex justify-center gap-6 animate-on-scroll">
-          <button className="bg-electric text-black px-8 py-4 font-bebas text-lg tracking-wider hover:bg-white transition-colors">
-            START A PROJECT
-          </button>
-          <button 
-            onClick={scrollToPortfolio}
-            className="border border-white text-white px-8 py-4 font-bebas text-lg tracking-wider hover:bg-white hover:text-black transition-colors"
-          >
-            VIEW LOOKBOOK
-          </button>
+    <section id="contact" ref={sectionRef} className="py-20 bg-gray-900">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-16 animate-on-scroll">
+          <h2 className="font-bebas text-5xl md:text-7xl text-white mb-4 uppercase tracking-wider">Contact</h2>
+          <div className="w-16 h-px bg-white mx-auto mb-8"></div>
+          <p className="text-gray-400 font-space text-lg uppercase tracking-widest">Get In Touch</p>
         </div>
 
-        {/* Contact Information Image */}
-        <div className="mt-16 animate-on-scroll">
-          <div className="relative max-w-2xl mx-auto">
-            <img 
-              src={contactInfo} 
-              alt="KME World Contact Information - Garments for the Unorthodox"
-              className="w-full h-auto rounded-lg"
-            />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Contact Information */}
+          <div className="animate-on-scroll">
+            <h3 className="font-bebas text-3xl md:text-4xl text-white mb-8 uppercase">Ready to Collaborate?</h3>
+            <p className="text-gray-300 font-space text-lg leading-relaxed mb-8">
+              Whether you're an artist looking for custom pieces, a brand seeking collaboration, 
+              or a creative wanting to push boundaries, let's create something unorthodox together.
+            </p>
+            
+            <div className="space-y-6 mb-12">
+              {contactMethods.map((method, index) => (
+                <div key={index} className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-white/10 flex items-center justify-center">
+                    <i className={`${method.icon} text-white text-lg`}></i>
+                  </div>
+                  <div>
+                    <h4 className="font-bebas text-lg text-white uppercase tracking-wider">{method.title}</h4>
+                    <p className="text-gray-400 font-space">{method.info}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button className="bg-white text-black px-8 py-3 font-bebas text-lg tracking-wider hover:bg-gray-200 transition-colors uppercase">
+                Start a Project
+              </button>
+              <button 
+                onClick={scrollToPortfolio}
+                className="border border-white text-white px-8 py-3 font-bebas text-lg tracking-wider hover:bg-white hover:text-black transition-colors uppercase"
+              >
+                View Collection
+              </button>
+            </div>
+          </div>
+
+          {/* Contact Information Image */}
+          <div className="animate-on-scroll">
+            <div className="relative">
+              <img 
+                src={contactInfo} 
+                alt="KME World Contact Information - Garments for the Unorthodox"
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Additional Info */}
+        <div className="mt-20 text-center animate-on-scroll">
+          <div className="max-w-3xl mx-auto">
+            <h3 className="font-bebas text-2xl md:text-3xl text-white mb-4 uppercase">Current Focus</h3>
+            <p className="text-gray-400 font-space leading-relaxed">
+              Currently accepting commissions for custom pieces, celebrity styling projects, 
+              and brand collaborations. Lead time varies by project scope and complexity.
+            </p>
           </div>
         </div>
       </div>
