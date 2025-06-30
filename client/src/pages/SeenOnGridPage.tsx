@@ -59,22 +59,17 @@ export default function SeenOnGridPage() {
   const titleY = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const titleOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
-  // All available items (in a real app, this would come from an API)
+  // Press features and magazine coverage items
   const allItems: GridItem[] = [
-    { id: '1', type: 'image', src: mishkaLookbook, title: 'KME WORLD × MISHKA', subtitle: '2023 LOOKBOOK', category: 'Collection', size: 'xlarge' },
-    { id: '2', type: 'image', src: shakeImage, title: '070 SHAKE', subtitle: 'CRACK MAGAZINE', category: 'Editorial', size: 'large', externalLink: 'https://crackmagazine.net/article/profiles/070-shake-feature/' },
-    { id: '3', type: 'image', src: kmeDesign1, title: 'MISHKA COLLAB', subtitle: 'Custom Hoodie', category: 'Product', size: 'medium' },
-    { id: '4', type: 'image', src: ddgImage, title: 'DDG', subtitle: 'UPROXX MAGAZINE', category: 'Editorial', size: 'large', externalLink: 'https://uproxx.com/music/ddg-its-not-me-its-you-interview/' },
-    { id: '5', type: 'image', src: kmeDesign2, title: 'EYEBALL GRAPHIC', subtitle: 'Signature Series', category: 'Product', size: 'medium' },
-    { id: '6', type: 'video', src: lanceyImage, title: 'LANCEY FOUX', subtitle: 'FT. TEEZO TOUCHDOWN', category: 'Music Video', videoUrl: 'https://www.youtube.com/watch?v=UXWGAydyOww', size: 'large' },
-    { id: '7', type: 'image', src: ddgFeature, title: 'DDG', subtitle: 'Custom Piece', category: 'Celebrity', size: 'small' },
-    { id: '8', type: 'image', src: kmeDesign3, title: 'CROPPED HOODIE', subtitle: 'Streetwear', category: 'Product', size: 'medium' },
-    { id: '9', type: 'image', src: cardiBGrammy, title: 'GRAMMY HOUSE', subtitle: '2024 Event', category: 'Event', size: 'medium' },
-    { id: '10', type: 'image', src: kmeDesign4, title: 'GRAPHIC TEE', subtitle: 'Limited Edition', category: 'Product', size: 'medium' },
-    { id: '11', type: 'image', src: performanceShot, title: 'LIVE PERFORMANCE', subtitle: 'Tour Styling', category: 'Performance', size: 'medium' },
-    { id: '12', type: 'image', src: groupPhoto, title: 'THE COMMUNITY', subtitle: 'Artists & Creatives', category: 'Behind the Scenes', size: 'xlarge' },
-    { id: '13', type: 'image', src: shakePortrait, title: '070 SHAKE', subtitle: 'Portrait Session', category: 'Editorial', size: 'large' },
-    { id: '14', type: 'image', src: teezoImage, title: 'TEEZO TOUCHDOWN', subtitle: 'Doja Cat Tour', category: 'Performance', size: 'medium' },
+    { id: '2', type: 'image', src: shakeImage, title: '070 SHAKE', subtitle: 'CRACK MAGAZINE', category: 'Magazine Feature', size: 'xlarge', externalLink: 'https://crackmagazine.net/article/profiles/070-shake-feature/' },
+    { id: '4', type: 'image', src: ddgImage, title: 'DDG', subtitle: 'UPROXX MAGAZINE', category: 'Magazine Cover', size: 'large', externalLink: 'https://uproxx.com/music/ddg-its-not-me-its-you-interview/' },
+    { id: '6', type: 'video', src: lanceyImage, title: 'LANCEY FOUX', subtitle: 'FT. TEEZO TOUCHDOWN', category: 'Music Video Feature', videoUrl: 'https://www.youtube.com/watch?v=UXWGAydyOww', size: 'large' },
+    { id: '13', type: 'image', src: shakePortrait, title: '070 SHAKE', subtitle: 'Portrait Gallery', category: 'Editorial Shoot', size: 'large' },
+    { id: '7', type: 'image', src: ddgFeature, title: 'DDG', subtitle: 'Custom Styling', category: 'Celebrity Feature', size: 'medium' },
+    { id: '14', type: 'image', src: teezoImage, title: 'TEEZO TOUCHDOWN', subtitle: 'Doja Cat Tour', category: 'Performance Feature', size: 'medium' },
+    { id: '9', type: 'image', src: cardiBGrammy, title: 'GRAMMY HOUSE', subtitle: '2024 Event Coverage', category: 'Event Feature', size: 'medium' },
+    { id: '11', type: 'image', src: performanceShot, title: 'LIVE PERFORMANCE', subtitle: 'Tour Styling Feature', category: 'Performance Feature', size: 'medium' },
+    { id: '12', type: 'image', src: groupPhoto, title: 'ARTIST COLLECTIVE', subtitle: 'Behind the Scenes', category: 'Editorial Feature', size: 'xlarge' },
   ];
 
   const itemsPerPage = 6;
@@ -223,10 +218,10 @@ export default function SeenOnGridPage() {
   return (
     <>
       <SEO 
-        title="KME WORLD - Elevated Editorial Fashion"
-        description="Experience KME WORLD's boundary-pushing streetwear designs. Custom pieces worn by 070 Shake, DDG, and other visionary artists. Fashion for the unorthodox."
-        keywords="KME WORLD, streetwear, editorial fashion, 070 Shake, DDG, custom clothing, avant-garde, designer fashion, celebrity styling"
-        url="https://kmeworld.com"
+        title="KME WORLD - Seen On"
+        description="KME WORLD designs featured in major publications and worn by visionary artists. Press coverage, magazine features, and celebrity styling showcases."
+        keywords="KME WORLD, magazine features, press coverage, 070 Shake, DDG, celebrity styling, editorial fashion, music video fashion"
+        url="https://kmeworld.com/seen-on"
       />
       <motion.div 
         ref={containerRef}
@@ -280,7 +275,7 @@ export default function SeenOnGridPage() {
               perspective: '1000px',
             }}
           >
-            KME WORLD
+            SEEN ON
           </h1>
           
           <motion.div
@@ -297,11 +292,11 @@ export default function SeenOnGridPage() {
             className="space-y-4"
           >
             <p className="font-space text-lg md:text-2xl text-gray-200 uppercase tracking-[0.4em] mb-4">
-              Elevated Editorial Fashion
+              Press Coverage & Features
             </p>
             <p className="font-space text-sm md:text-base text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              Where unorthodox design meets cultural relevance. 
-              Worn by visionaries, created for the fearless.
+              KME WORLD designs featured in major publications and worn by 
+              visionary artists across music, fashion, and culture.
             </p>
           </motion.div>
 
@@ -318,7 +313,7 @@ export default function SeenOnGridPage() {
             className="mt-8 px-8 py-4 border border-white/50 text-white font-space text-sm uppercase tracking-[0.2em] backdrop-blur-sm bg-white/5 hover:bg-white hover:text-black transition-all duration-500 group"
             onClick={handleExploreCollectionClick}
           >
-            <span className="relative z-10">Explore Collection</span>
+            <span className="relative z-10">View Features</span>
             <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
           </motion.button>
         </motion.div>
@@ -364,6 +359,28 @@ export default function SeenOnGridPage() {
             }}
           />
         ))}
+      </div>
+
+      {/* Video Features Section */}
+      <div className="bg-gray-900 py-20">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h2 className="font-bebas text-4xl md:text-6xl text-white mb-6 uppercase tracking-wider">Video Features</h2>
+          <div className="w-32 h-px bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-8"></div>
+          <p className="font-space text-lg text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Watch KME WORLD designs in action through music videos, performances, 
+            and behind-the-scenes content featuring our collaborating artists.
+          </p>
+          <motion.a
+            href="/seen-on-video"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center gap-4 bg-white text-black px-8 py-4 font-bebas text-lg uppercase tracking-wider hover:bg-gray-200 transition-colors group"
+          >
+            <i className="fas fa-play text-xl"></i>
+            <span>Watch Video Features</span>
+            <i className="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+          </motion.a>
+        </div>
       </div>
 
       {/* Stunning Grid Section */}
@@ -516,8 +533,8 @@ export default function SeenOnGridPage() {
             transition={{ duration: 0.8 }}
           >
             <div className="w-32 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent mx-auto mb-6"></div>
-            <p className="font-space text-gray-500 uppercase tracking-[0.3em] text-sm">End of Collection</p>
-            <p className="font-space text-gray-700 text-xs mt-2 tracking-wider">More coming soon</p>
+            <p className="font-space text-gray-500 uppercase tracking-[0.3em] text-sm">End of Features</p>
+            <p className="font-space text-gray-700 text-xs mt-2 tracking-wider">More press coverage coming soon</p>
           </motion.div>
         )}
       </div>

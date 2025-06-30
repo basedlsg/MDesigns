@@ -32,27 +32,22 @@ export default function Navigation() {
           <div className="hidden md:flex space-x-8 font-space text-sm">
             <Link href="/">
               <a className="text-white hover:text-gray-300 transition-colors uppercase tracking-widest">
-                Work
+                Seen On
               </a>
             </Link>
             <Link href="/collaborations">
               <a className="text-white hover:text-gray-300 transition-colors uppercase tracking-widest">
-                Collabs
+                Collaborations
               </a>
             </Link>
             <Link href="/information">
               <a className="text-white hover:text-gray-300 transition-colors uppercase tracking-widest">
-                About
+                Information
               </a>
             </Link>
             <Link href="/shop">
               <a className="text-white hover:text-gray-300 transition-colors uppercase tracking-widest">
                 Shop
-              </a>
-            </Link>
-            <Link href="/contact">
-              <a className="text-white hover:text-gray-300 transition-colors uppercase tracking-widest">
-                Contact
               </a>
             </Link>
           </div>

@@ -22,42 +22,15 @@ export default function CollaborationPage() {
       title: 'MISHKA × KME WORLD',
       subtitle: '2023 COLLECTION',
       image: mishkaLookbook,
-      description: 'Underground culture meets futuristic streetwear in this limited-edition collaboration.',
+      description: 'A groundbreaking collaboration merging underground culture with futuristic streetwear. This limited-edition collection features custom hoodies with vintage plaid suit jacket overlays, eyeball graphics, and signature KME WORLD × MISHKA co-branded elements.',
+      link: '/shop'
     },
     {
       id: '2',
-      title: '070 SHAKE',
-      subtitle: 'CRACK MAGAZINE',
-      image: shakeImage,
-      description: 'Editorial styling and custom pieces for the boundary-pushing artist\'s magazine feature.',
-    },
-    {
-      id: '3',
-      title: 'DDG',
-      subtitle: 'UPROXX MAGAZINE',
-      image: ddgImage,
-      description: 'Cover story wardrobe and creative direction for the multi-platinum artist.',
-    },
-    {
-      id: '4',
-      title: 'LANCEY FOUX',
-      subtitle: 'FT. TEEZO TOUCHDOWN',
-      image: lanceyImage,
-      description: 'Music video styling bringing together two visionary artists in fashion-forward looks.',
-    },
-    {
-      id: '5',
-      title: '070 SHAKE',
-      subtitle: 'PORTRAIT GALLERY',
-      image: shakePortrait,
-      description: 'Intimate portrait session showcasing KME WORLD\'s approach to artist styling.',
-    },
-    {
-      id: '6',
-      title: 'THE COMMUNITY',
-      subtitle: 'COLLECTIVE PROJECTS',
+      title: 'TOMBOGO × KME WORLD',
+      subtitle: 'NYFW RUNWAY SHOW',
       image: groupPhoto,
-      description: 'Ongoing collaborations with artists, creatives, and tastemakers wearing KME WORLD.',
+      description: 'KME WORLD provided exclusive styling and custom pieces for Tombogo\'s New York Fashion Week SS25 runway presentation. The collaboration showcased avant-garde streetwear pieces that blurred the lines between high fashion and urban culture.',
     },
   ];
 
@@ -97,9 +70,15 @@ export default function CollaborationPage() {
                   <p className="font-space text-xs text-gray-500 uppercase tracking-[0.3em] mb-2">{collab.subtitle}</p>
                   <h2 className="font-bebas text-4xl md:text-5xl text-white mb-4 uppercase">{collab.title}</h2>
                   <p className="font-space text-gray-400 mb-6 leading-relaxed">{collab.description}</p>
-                  <button className="border border-white text-white px-6 py-3 font-space text-sm tracking-wider hover:bg-white hover:text-black transition-all duration-300 uppercase">
-                    View Project
-                  </button>
+                  {collab.link ? (
+                    <a href={collab.link} className="border border-white text-white px-6 py-3 font-space text-sm tracking-wider hover:bg-white hover:text-black transition-all duration-300 uppercase inline-block">
+                      Shop Collection
+                    </a>
+                  ) : (
+                    <button className="border border-white text-white px-6 py-3 font-space text-sm tracking-wider hover:bg-white hover:text-black transition-all duration-300 uppercase">
+                      View Project
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

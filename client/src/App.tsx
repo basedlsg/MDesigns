@@ -7,12 +7,11 @@ import { HelmetProvider } from 'react-helmet-async';
 import Layout from "@/components/Layout";
 import CustomCursor from "@/components/CustomCursor";
 
-import SeenOnGridPage from "@/pages/SeenOnGridPage";
+import SeenOnGridPage from "@/pages/MinimalSeenOnPage";
 import CollaborationPage from "@/pages/CollaborationPage";
 import InformationPage from "@/pages/InformationPage";
 import SeenOnVideoPage from "@/pages/SeenOnVideoPage";
 import ShopPage from "@/pages/ShopPage";
-import ContactPage from "@/pages/ContactPage";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -24,7 +23,6 @@ function Router() {
         <Route path="/information" component={InformationPage} />
         <Route path="/seen-on-video" component={SeenOnVideoPage} />
         <Route path="/shop" component={ShopPage} />
-        <Route path="/contact" component={ContactPage} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

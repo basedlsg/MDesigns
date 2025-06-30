@@ -25,25 +25,16 @@ export function log(message: string, source = "express") {
 }
 
 export async function setupVite(app: Express, server: Server) {
-  const serverOptions = {
-    middlewareMode: true,
-    hmr: { server },
-    allowedHosts: true,
-  };
-
-  const vite = await createViteServer({
-    ...viteConfig,
-    configFile: false,
-    customLogger: {
-      ...viteLogger,
-      error: (msg, options) => {
-        viteLogger.error(msg, options);
-        process.exit(1);
+  try {
+    const vite = await createViteServer({
+      ...viteConfig,
+      configFile: false,
+      server: {
+        middlewareMode: true,
+        hmr: { server },
       },
-    },
-    server: serverOptions,
-    appType: "custom",
-  });
+      appType: "custom",
+    });
 
   app.use(vite.middlewares);
   app.use("*", async (req, res, next) => {
@@ -70,6 +61,10 @@ export async function setupVite(app: Express, server: Server) {
       next(e);
     }
   });
+  } catch (error) {
+    log(`Vite setup failed: ${error}`, "vite");
+    throw error;
+  }
 }
 
 export function serveStatic(app: Express) {
