@@ -7,7 +7,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import Layout from "@/components/Layout";
 import CustomCursor from "@/components/CustomCursor";
 
-import SeenOnGridPage from "@/pages/MinimalSeenOnPage";
+import SeenOnGridPage from "@/pages/SeenOnGridPage";
 import CollaborationPage from "@/pages/CollaborationPage";
 import InformationPage from "@/pages/InformationPage";
 import SeenOnVideoPage from "@/pages/SeenOnVideoPage";
