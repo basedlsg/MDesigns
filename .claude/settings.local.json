@@ -11,7 +11,25 @@
       "Bash(ls:*)",
       "Bash(true)",
       "Bash(npm install:*)",
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "Bash(find:*)",
+      "Bash(npm run check:*)",
+      "Bash(timeout 10s npm run dev:*)",
+      "Bash(npm run build:*)",
+      "Bash(PORT=3000 npm run dev)",
+      "Bash(npx tsc:*)",
+      "Bash(node:*)",
+      "Bash(NODE_ENV=development npm run dev)",
+      "Bash(npm start)",
+      "Bash(NODE_ENV=development node_modules/.bin/tsx server/index.ts)",
+      "Bash(mkdir:*)",
+      "Bash(DEBUG=*)",
+      "Bash(npx tsx:*)",
+      "Bash(npx vite:*)",
+      "Bash(nc:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ],
     "deny": []
   }
